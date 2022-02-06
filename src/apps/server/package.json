@@ -7,7 +7,6 @@
   "scripts": {
     "start": "LOGGER_LEVEL=trace direnv exec . yarn run nodemon",
     "build": "yarn run clean && yarn run compile",
-    "build:ormconfig": "tsc -p tsconfig.orm.json",
     "lint": "eslint .",
     "clean": "rm -rf ./dist && rm -f ormconfig.js",
     "clean-all": "yarn clean && rm -rf node_modules",

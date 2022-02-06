@@ -34,7 +34,6 @@ FROM base AS builder
 COPY --from=dev-deps /app/ .
 COPY --from=pruner /app/out/full/ .
 RUN yarn turbo run build --scope=repro-server --include-dependencies --no-deps
-RUN yarn workspace repro-server build:ormconfig
 RUN find . -name node_modules | xargs rm -rf
 
 # 4. Run the app
