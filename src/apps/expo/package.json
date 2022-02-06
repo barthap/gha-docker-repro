@@ -1,0 +1,20 @@
+{
+  "main": "index.js",
+  "name": "repro-expo-app",
+  "scripts": {
+    "dev": "yarn start:expo",
+    "start": "yarn start:expo",
+    "start:expo": "expo start",
+    "start:clear": "yarn start:expo -c"
+  },
+  "dependencies": {
+    "react-native": "0.64.3",
+    "repro-app": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT"
+}

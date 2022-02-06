@@ -1,0 +1,2 @@
+# This dockerignore is unused, use the global one instead
+# (unless `context` is set for this dir, but at least now it's not)

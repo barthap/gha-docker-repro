@@ -1,0 +1,47 @@
+name: Web app
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'src/apps/app/**'
+      - 'src/apps/web/**'
+      - 'src/apps/expo/**'
+      - '.github/workflows/web.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'src/apps/app/**'
+      - 'src/apps/web/**'
+      - 'src/apps/expo/**'
+      - '.github/workflows/web.yml'
+
+jobs:
+  docker:
+    name: Build docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./src/apps/web/Dockerfile
+          target: runner
+          builder: ${{ steps.buildx.outputs.name }}
+          tags: repro-nextjs-app:latest
+          cache-from: type=gha, scope=${{ github.workflow }}
+          cache-to: type=gha, scope=${{ github.workflow }},mode=max

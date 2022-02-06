@@ -1,0 +1,26 @@
+{
+  "name": "@repro/commons-react",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "yarn watch",
+    "watch": "yarn compile --watch --preserveWatchOutput",
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf ./dist",
+    "clean-all": "yarn clean && rm -rf node_modules",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "react": "^17"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "@types/react": "^17"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "extends": ["../../../.eslintrc.json", "universe/native"],
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-expressions": "off"
+      }
+    }
+  ]
+}

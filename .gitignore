@@ -1,0 +1,11 @@
+node_modules
+.expo
+.DS_Store
+firebase.config.js
+tools/firebase.config.mjs
+*db.session.sql
+.VSCodeCounter/
+.turbo
+
+# turborepo prune output dir
+out

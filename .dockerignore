@@ -1,0 +1,35 @@
+**/node_modules/
+**/*.log
+**/.prettierrc
+**/*.md
+**/Dockerfile
+**/.turbo/
+
+### Common ###
+
+**/.expo/
+.github/
+.vscode/
+deployment/
+external/
+out/
+secrets/
+tools/
+
+### SERVER ###
+
+src/apps/server/coverage/
+src/apps/server/db/
+src/apps/server/jest/
+src/apps/server/scripts/
+
+src/apps/server/Dockerfile
+src/apps/server/docker-compose.yml
+src/apps/server/jest.config.*.js
+src/apps/server/nodemon*.json
+# we should copy only the .ts
+src/apps/server/ormconfig.js
+
+
+### WEB ###
+src/apps/web/.next/
