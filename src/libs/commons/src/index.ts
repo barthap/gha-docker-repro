@@ -38,7 +38,7 @@ export interface APIErrorResponse {
 }
 
 export function isErrorResponse(
-  response: Response,
+  response: any,
   // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
   // @ts-ignore unused variable, and eslint complains about this not being a ts err
   responseBody?: any
